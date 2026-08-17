@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code with a Dude</title>
+  <meta name="description" content="Take your app easy">
+  <link rel="icon" href="../src/app/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fade-in 1s ease-out; }
+  </style>
+</head>
+<body class="text-gray-900 bg-gradient-to-b from-gray-100 to-white">
+
+  <!-- Language Selector -->
+  <div class="fixed top-4 right-4 z-50">
+    <button id="lang-btn" onclick="toggleLangMenu()" class="px-4 py-2 bg-purple-600 text-white border border-purple-400 rounded-lg shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-colors flex items-center gap-2">
+      <span id="lang-label" class="text-sm font-medium">English</span>
+      <svg class="w-4 h-4 transition-transform" id="lang-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div id="lang-menu" class="hidden absolute right-0 mt-2 w-40 bg-white border border-purple-300 rounded-lg shadow-lg overflow-hidden">
+      <button onclick="setLang('en')" class="w-full px-4 py-2 text-left text-sm hover:bg-purple-50 transition-colors bg-purple-100 text-purple-800 font-semibold" id="lang-en">English</button>
+      <button onclick="setLang('fr')" class="w-full px-4 py-2 text-left text-sm hover:bg-purple-50 transition-colors text-gray-800" id="lang-fr">Fran&ccedil;ais</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center min-h-screen py-2 overflow-hidden">
+      <img src="hero.png" alt="hero" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+      <div class="flex flex-col items-center justify-center absolute z-10 px-4 sm:px-6 text-center max-w-4xl w-full">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 sm:mb-8 text-white drop-shadow-2xl leading-tight" data-i18n="hero.title">You want a cool web site?</h2>
+        <a class="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-base sm:text-lg font-bold rounded-full hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 hover:scale-110 transform w-full sm:w-auto max-w-xs sm:max-w-none" href="https://calendar.app.google/2hRoLPEAMBY4AVSq8">
+          <span class="relative z-10" data-i18n="hero.cta">BOOK A CALL</span>
+          <div class="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="flex flex-col items-center justify-center min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-lime-50 via-green-50 to-emerald-50 relative overflow-hidden">
+      <div class="w-full max-w-4xl space-y-4 sm:space-y-6 relative z-10">
+        <div class="mb-6 sm:mb-8">
+          <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mb-4 sm:mb-6"></div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-600 text-transparent bg-clip-text mb-4" data-i18n="intro.aboutTitle">About My Approach</h2>
+        </div>
+        <div class="space-y-4 sm:space-y-6 border-l-4 border-green-500 pl-4 sm:pl-6 md:pl-8 bg-white/60 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-r-2xl shadow-xl">
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line1">You can ask me how much costs your project in Next.js</p>
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line2">I think that 300&euro; is a fair price for a simple landing page.</p>
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line3">I do not know how to evaluate time and budget.</p>
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line4">If you think that I can help you ...</p>
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line5">I prefer that you donate what you want.</p>
+          <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light" data-i18n="intro.line6">Just take it easy mankind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="flex flex-col items-center justify-center min-h-screen py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
+      <div class="max-w-6xl w-full relative z-10">
+        <div class="text-center mb-10 sm:mb-12 md:mb-16">
+          <div class="inline-block mb-4 sm:mb-6">
+            <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-3 sm:mb-4"></div>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 px-4" data-i18n="pricing.title">How It Works</h2>
+          <p class="text-lg sm:text-xl md:text-2xl text-gray-700 px-4" data-i18n="pricing.subtitle">A simple process, you are totally free</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Learn Column -->
+          <div class="group bg-white rounded-2xl shadow-2xl p-6 sm:p-8 border-2 border-gray-100 hover:border-green-500 transition-all duration-500 transform hover:scale-105 hover:shadow-green-500/20 hover:shadow-2xl backdrop-blur-sm relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-center mb-6 sm:mb-8 relative z-10">
+              <div class="inline-block bg-gradient-to-br from-green-100 to-emerald-100 rounded-full p-4 sm:p-5 mb-3 sm:mb-4 text-3xl sm:text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">&#x1F331;</div>
+              <h3 class="text-gray-800 text-xl sm:text-2xl font-bold mb-2" data-i18n="pricing.learn.title">Learn and Code</h3>
+            </div>
+            <ul class="space-y-4 mb-8 relative z-10">
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.learn.step1">Discover JavaScript</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.learn.step2">Explore algorithms</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.learn.step3">Ask questions</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.learn.step4">Get guidance</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.learn.step5">Understand the process</span></li>
+              <li class="flex items-start relative z-10"><span class="text-green-500 mr-3 mt-1 flex-shrink-0">&#x1F449;</span><a href="https://learn.codewithadu.de" target="_blank" rel="noopener noreferrer" class="text-gray-700 underline hover:text-green-600 hover:no-underline transition-colors duration-200 cursor-pointer" data-i18n="pricing.learn.step6">learn.codewithadu.de</a></li>
+            </ul>
+          </div>
+
+          <!-- Build Column - Featured -->
+          <div class="group bg-gradient-to-br from-white to-green-50 rounded-2xl shadow-2xl p-6 sm:p-8 pt-10 sm:pt-12 border-2 border-green-500 transform md:scale-105 hover:scale-105 md:hover:scale-110 relative transition-all duration-500 hover:shadow-green-500/30 hover:shadow-3xl overflow-visible">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-2 rounded-full text-sm font-bold shadow-lg whitespace-nowrap" data-i18n="pricing.build.featured">Interesting</div>
+            <div class="text-center mb-6 sm:mb-8 relative z-10">
+              <div class="inline-block bg-gradient-to-br from-green-100 to-emerald-100 rounded-full p-4 sm:p-5 mb-3 sm:mb-4 text-3xl sm:text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">&#x1F680;</div>
+              <h3 class="text-gray-800 text-xl sm:text-2xl font-bold mb-2" data-i18n="pricing.build.title">Landing Pages</h3>
+            </div>
+            <ul class="space-y-4 mb-8 relative z-10">
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.build.step1">Choose your template</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.build.step2">Customize design</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.build.step3">Add your content</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.build.step4">Integrate features</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.build.step5">Be visible</span></li>
+              <li class="flex items-start relative z-10"><span class="text-green-500 mr-3 mt-1 flex-shrink-0">&#x1F449;</span><a href="https://ui.codewithadu.de" target="_blank" rel="noopener noreferrer" class="text-gray-700 underline hover:text-green-600 hover:no-underline transition-colors duration-200 cursor-pointer" data-i18n="pricing.build.step6">ui.codewithadu.de</a></li>
+            </ul>
+          </div>
+
+          <!-- Ship Column -->
+          <div class="group bg-white rounded-2xl shadow-2xl p-6 sm:p-8 border-2 border-gray-100 hover:border-green-500 transition-all duration-500 transform hover:scale-105 hover:shadow-green-500/20 hover:shadow-2xl backdrop-blur-sm relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-center mb-6 sm:mb-8 relative z-10">
+              <div class="inline-block bg-gradient-to-br from-green-100 to-emerald-100 rounded-full p-4 sm:p-5 mb-3 sm:mb-4 text-3xl sm:text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">&#x1F3C6;</div>
+              <h3 class="text-gray-800 text-xl sm:text-2xl font-bold mb-2" data-i18n="pricing.ship.title">SaaS</h3>
+            </div>
+            <ul class="space-y-4 mb-8 relative z-10">
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.ship.step1">Deploy your SaaS</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.ship.step2">Launch online</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.ship.step3">Share with world</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.ship.step4">Get feedback</span></li>
+              <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mr-3 mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-gray-700" data-i18n="pricing.ship.step5">Iterate &amp; improve</span></li>
+              <li class="flex items-start relative z-10"><span class="text-green-500 mr-3 mt-1 flex-shrink-0">&#x1F449;</span><a href="https://saas.codewithadu.de" target="_blank" rel="noopener noreferrer" class="text-gray-700 underline hover:text-green-600 hover:no-underline transition-colors duration-200 cursor-pointer" data-i18n="pricing.ship.step6">saas.codewithadu.de</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pricing Bottom -->
+        <div class="mt-10 sm:mt-12 md:mt-16 text-center bg-gradient-to-br from-white to-green-50 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 max-w-2xl mx-auto border-2 border-green-500 hover:shadow-green-500/30 transition-all duration-500 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="mb-6 sm:mb-8 relative z-10">
+            <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-2 sm:mb-3" data-i18n="pricing.price">Donate Instead</div>
+            <p class="text-gray-700 text-lg sm:text-xl font-medium" data-i18n="pricing.priceSubtitle">No fixed price, you decide the value</p>
+          </div>
+          <a href="https://calendar.app.google/2hRoLPEAMBY4AVSq8" class="inline-block px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg sm:text-xl font-bold rounded-full hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 transform hover:scale-110 relative group w-full sm:w-auto">
+            <span class="relative z-10" data-i18n="pricing.cta">Get Started</span>
+            <div class="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="relative w-full py-24 px-6 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight mb-12 bg-gradient-to-r from-teal-600 to-cyan-600 text-transparent bg-clip-text">FAQ</h2>
+        <div class="space-y-4" id="faq-container">
+          <!-- FAQ items are rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <section class="flex flex-col items-center justify-center min-h-screen py-12 sm:py-16 bg-gradient-to-br from-green-50 via-teal-50 to-emerald-50 relative overflow-hidden">
+      <div class="relative z-10 text-center mb-8 sm:mb-12 px-4">
+        <p class="text-gray-800 text-xl sm:text-2xl md:text-3xl font-semibold mb-4 sm:mb-6">
+          <span class="border-b-2 border-gray-800/50" data-i18n="footer.keepInTouch">KEEP IN TOUCH</span>
+        </p>
+        <div class="flex justify-center items-center gap-4 mb-4">
+          <a href="https://substack.com/@nazimboudeffa" target="_blank" rel="noopener noreferrer">
+            <img src="substack-logo.png" alt="Substack" width="40" height="40" />
+          </a>
+        </div>
+        <p class="text-gray-700 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 mx-auto max-w-2xl leading-relaxed" data-i18n="footer.note">Even if it is serious, all this work is in progress for the passion and to improve my web development skills.</p>
+      </div>
+
+      <!-- YouTube Video Embed -->
+      <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="relative w-full rounded-lg sm:rounded-2xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-green-200/50 hover:ring-green-300 transition-all duration-300 transform sm:hover:scale-105">
+          <div class="relative w-full pb-[56.25%] bg-black/20">
+            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/_ZKNoGa9eOI?rel=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrer-policy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 border-t bg-gray-50 mt-8">
+      <div class="max-w-5xl mx-auto flex flex-col px-4">
+        <h1 class="font-semibold text-gray-700 text-lg">Explore more experimentations</h1>
+        <a href="https://learn-gamedev-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn GameDev</a>
+        <a href="https://learn-trading-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn Trading</a>
+        <a href="https://learn-guitare-next16-phaser3.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn Guitare</a>
+        <a href="https://philo-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Philosphy in French</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        hero: { title: "You want a cool web site?", cta: "BOOK A CALL" },
+        intro: {
+          aboutTitle: "About My Approach",
+          line1: "You can ask me how much costs your project in Next.js",
+          line2: "I think that 300\u20ac is a fair price for a simple landing page.",
+          line3: "I do not know how to evaluate time and budget.",
+          line4: "If you think that I can help you ...",
+          line5: "I prefer that you donate what you want.",
+          line6: "Just take it easy mankind."
+        },
+        pricing: {
+          title: "How It Works",
+          subtitle: "A simple process, you are totally free",
+          learn: { title: "Learn and Code", featured: "", step1: "Discover JavaScript", step2: "Explore algorithms", step3: "Ask questions", step4: "Get guidance", step5: "Understand the process", step6: "learn.codewithadu.de" },
+          build: { title: "Landing Pages", featured: "Interesting", step1: "Choose your template", step2: "Customize design", step3: "Add your content", step4: "Integrate features", step5: "Be visible", step6: "ui.codewithadu.de" },
+          ship: { title: "SaaS", featured: "", step1: "Deploy your SaaS", step2: "Launch online", step3: "Share with world", step4: "Get feedback", step5: "Iterate & improve", step6: "saas.codewithadu.de" },
+          price: "Donate Instead",
+          priceSubtitle: "No fixed price, you decide the value",
+          cta: "Get Started"
+        },
+        faq: {
+          questions: [
+            "What is the typical turnaround time for a landing page?",
+            "Can I see examples of your previous work?",
+            "Do you offer revisions or edits after the initial design?",
+            "What information do you need from me to get started?",
+            "How do you handle responsive design for different devices?"
+          ],
+          answers: [
+            "A simple landing page usually takes 1 to 3 days depending on the clarity of your content.",
+            "Yes. you can check my github.com/nazimboudeffa.",
+            "Minor text/style tweaks are free; bigger structural changes we revisit together.",
+            "A short description of your goal, target audience, any must-have sections (hero, features, contact), and assets (logo, colors).",
+            "All sections use responsive Tailwind utilities and I test across common breakpoints."
+          ]
+        },
+        footer: { keepInTouch: "KEEP IN TOUCH ON LINKEDIN", note: "Even if it is serious, all this work is in progress for the passion and to improve my web development skills." }
+      },
+      fr: {
+        hero: { title: "Vous voulez un site web cool ?", cta: "PRENDRE RENDEZ-VOUS" },
+        intro: {
+          aboutTitle: "\u00c0 Propos de Mon Approche",
+          line1: "Vous pouvez me demander combien co\u00fbte votre projet en Next.js",
+          line2: "Je pense que 300\u20ac est un prix juste pour une simple landing page.",
+          line3: "Je ne sais pas comment \u00e9valuer le temps et le budget.",
+          line4: "Si vous pensez que je peux vous aider ...",
+          line5: "Je pr\u00e9f\u00e8re que vous donniez ce que vous voulez.",
+          line6: "Prenez les choses avec philosophie."
+        },
+        pricing: {
+          title: "Comment \u00e7a marche",
+          subtitle: "Un processus simple, vous \u00eates totalement libres",
+          learn: { title: "Apprendre et coder", featured: "", step1: "D\u00e9couvrir JavaScript", step2: "Explorer les algorithmes", step3: "Poser des questions", step4: "Obtenir des conseils", step5: "Comprendre le processus", step6: "learn.codewithadu.de" },
+          build: { title: "Landing Pages", featured: "Int\u00e9ressant", step1: "Choisir votre template", step2: "Personnaliser le design", step3: "Ajouter votre contenu", step4: "Int\u00e9grer les fonctionnalit\u00e9s", step5: "\u00cAtre visible", step6: "ui.codewithadu.de" },
+          ship: { title: "SaaS", featured: "", step1: "D\u00e9ployer votre SaaS", step2: "Lancer en ligne", step3: "Partager au monde", step4: "Recevoir des retours", step5: "It\u00e9rer & am\u00e9liorer", step6: "saas.codewithadu.de" },
+          price: "Donnez Plut\u00f4t",
+          priceSubtitle: "Pas de prix fixe, vous d\u00e9cidez de la valeur",
+          cta: "Commencer"
+        },
+        faq: {
+          questions: [
+            "Quel est le d\u00e9lai typique pour une landing page ?",
+            "Puis-je voir des exemples de vos travaux pr\u00e9c\u00e9dents ?",
+            "Offrez-vous des r\u00e9visions ou des modifications apr\u00e8s la conception initiale ?",
+            "Quelles informations avez-vous besoin de ma part pour commencer ?",
+            "Comment g\u00e9rez-vous le design responsive pour diff\u00e9rents appareils ?"
+          ],
+          answers: [
+            "Une landing page simple prend en g\u00e9n\u00e9ral 1 \u00e0 3 jours selon la clart\u00e9 de votre contenu.",
+            "Oui. vous pouvez consulter mon github.com/nazimboudeffa.",
+            "Les petites retouches (texte / style) sont incluses; les changements majeurs on les revoit ensemble.",
+            "Une description de votre objectif, votre audience cible, les sections indispensables (hero, fonctionnalit\u00e9s, contact) et vos assets (logo, couleurs).",
+            "Chaque section utilise Tailwind responsive et je teste plusieurs tailles d'\u00e9cran."
+          ]
+        },
+        footer: { keepInTouch: "RESTONS EN CONTACT SUR LINKEDIN", note: "M\u00eame si c'est s\u00e9rieux, tout ce travail est en cours pour la passion et pour am\u00e9liorer mes comp\u00e9tences en d\u00e9veloppement web." }
+      }
+    };
+
+    const faqIcons = ['\u{1F4AC}', '\u{1F4A1}', '\u23F1\uFE0F', '\u{1F381}', '\u{1F33F}'];
+    const faqGradients = ['from-lime-400/25 to-green-700/25', 'from-cyan-400/20 to-blue-600/20', 'from-emerald-400/20 to-green-600/20', 'from-amber-400/25 to-orange-600/25', 'from-fuchsia-400/20 to-purple-600/20'];
+    let currentLang = 'en';
+    let openFaq = 0;
+
+    function toggleLangMenu() {
+      const menu = document.getElementById('lang-menu');
+      const arrow = document.getElementById('lang-arrow');
+      menu.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('lang-label').textContent = lang === 'en' ? 'English' : 'Fran\u00e7ais';
+      document.getElementById('lang-menu').classList.add('hidden');
+      document.getElementById('lang-arrow').classList.remove('rotate-180');
+      document.getElementById('lang-en').className = 'w-full px-4 py-2 text-left text-sm hover:bg-purple-50 transition-colors ' + (lang === 'en' ? 'bg-purple-100 text-purple-800 font-semibold' : 'text-gray-800');
+      document.getElementById('lang-fr').className = 'w-full px-4 py-2 text-left text-sm hover:bg-purple-50 transition-colors ' + (lang === 'fr' ? 'bg-purple-100 text-purple-800 font-semibold' : 'text-gray-800');
+      document.documentElement.lang = lang;
+      applyTranslations();
+      renderFaq();
+    }
+
+    function applyTranslations() {
+      const t = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let val = t;
+        for (const k of keys) { val = val[k]; }
+        if (val !== undefined) el.textContent = val;
+      });
+    }
+
+    function renderFaq() {
+      const t = translations[currentLang];
+      const container = document.getElementById('faq-container');
+      let html = '';
+      t.faq.questions.forEach((q, i) => {
+        const isOpen = openFaq === i;
+        const toggleLabel = isOpen ? (currentLang === 'fr' ? 'Fermer' : 'Close') : (currentLang === 'fr' ? 'Ouvrir' : 'Open');
+        html += `
+          <div class="rounded-2xl border border-gray-200 overflow-hidden shadow-sm transition ${isOpen ? 'shadow-lg ring-2 ring-green-500/40' : 'hover:shadow-md'}">
+            <button type="button" aria-expanded="${isOpen}" onclick="toggleFaq(${i})"
+              class="w-full text-left flex items-center gap-4 px-6 py-5 bg-gradient-to-r ${faqGradients[i]} backdrop-blur-sm transition hover:opacity-90">
+              <span class="text-2xl" aria-hidden="true">${faqIcons[i]}</span>
+              <span class="flex-1 font-semibold text-gray-800">${q}</span>
+              <span class="text-sm text-gray-700 font-medium select-none">${toggleLabel}</span>
+            </button>
+            <div class="px-6 pt-0 pb-6 text-sm text-gray-700 bg-white transition-all duration-300 ease-in-out ${isOpen ? 'max-h-56 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden">
+              <div class="mt-4 leading-relaxed">
+                <p class="font-medium mb-2">${t.faq.answers[i]}</p>
+              </div>
+            </div>
+          </div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    function toggleFaq(i) {
+      openFaq = openFaq === i ? null : i;
+      renderFaq();
+    }
+
+    renderFaq();
+  </script>
+
+</body>
+</html>
