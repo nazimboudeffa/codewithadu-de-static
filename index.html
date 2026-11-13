@@ -187,15 +187,41 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full py-6 border-t bg-gray-50 mt-8">
-      <div class="max-w-5xl mx-auto flex flex-col px-4">
-        <h1 class="font-semibold text-gray-700 text-lg">Explore more experimentations</h1>
-        <a href="https://learn-gamedev-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn GameDev</a>
-        <a href="https://learn-trading-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn Trading</a>
-        <a href="https://learn-guitare-next16-phaser3.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Learn Guitare</a>
-        <a href="https://philo-next16.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Philosphy in French</a>
-        <a href="https://malitterature.vercel.app" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Litterature in French</a>
-        <a href="https://senscritique.codewithadu.de" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Comment donner une note à un film</a>
+    <footer class="relative w-full overflow-hidden border-t border-emerald-900/10 bg-gradient-to-br from-slate-950 via-emerald-950 to-teal-950 py-16 sm:py-20 text-white">
+      <div class="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-6xl px-5 sm:px-8">
+        <div class="mb-8 sm:mb-10">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-emerald-300" data-i18n="footer.experimentsEyebrow">A little more curiosity</p>
+          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl" data-i18n="footer.experimentsTitle">Explore more experimentations</h2>
+          <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base" data-i18n="footer.experimentsNote">Small projects, new ideas, and things made just for the joy of building.</p>
+        </div>
+        <nav aria-label="More projects" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="https://learn-gamedev-next16.vercel.app" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Learn GameDev</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://learn-trading-next16.vercel.app" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Learn Trading</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://learn-guitare-next16-phaser3.vercel.app" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Learn Guitare</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://philo-next16.vercel.app" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Philosophy in French</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://malitterature.vercel.app" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Littérature en français</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://senscritique.codewithadu.de" class="group flex min-h-16 items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300" target="_blank" rel="noopener noreferrer">
+            <span class="font-medium text-slate-100 transition-colors group-hover:text-emerald-200">Comment donner une note à un film</span>
+            <span class="text-emerald-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+          </a>
+        </nav>
       </div>
     </footer>
 
@@ -240,7 +266,7 @@
             "All sections use responsive Tailwind utilities and I test across common breakpoints."
           ]
         },
-        footer: { keepInTouch: "KEEP IN TOUCH", note: "Even if it is serious, all this work is in progress for the passion and to improve my web development skills." }
+        footer: { keepInTouch: "KEEP IN TOUCH", note: "Even if it is serious, all this work is in progress for the passion and to improve my web development skills.", experimentsEyebrow: "A little more curiosity", experimentsTitle: "Explore more experimentations", experimentsNote: "Small projects, new ideas, and things made just for the joy of building." }
       },
       fr: {
         hero: { title: "Vous voulez un site web cool ?", cta: "PRENDRE RENDEZ-VOUS" },
@@ -279,7 +305,7 @@
             "Chaque section utilise Tailwind responsive et je teste plusieurs tailles d'\u00e9cran."
           ]
         },
-        footer: { keepInTouch: "RESTONS EN CONTACT", note: "M\u00eame si c'est s\u00e9rieux, tout ce travail est en cours pour la passion et pour am\u00e9liorer mes comp\u00e9tences en d\u00e9veloppement web." }
+        footer: { keepInTouch: "RESTONS EN CONTACT", note: "M\u00eame si c'est s\u00e9rieux, tout ce travail est en cours pour la passion et pour am\u00e9liorer mes comp\u00e9tences en d\u00e9veloppement web.", experimentsEyebrow: "Un peu plus de curiosité", experimentsTitle: "Explorez d'autres expérimentations", experimentsNote: "De petits projets, de nouvelles idées et des créations faites pour le plaisir de construire." }
       }
     };
 
